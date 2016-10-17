@@ -4,4 +4,8 @@ class RecordsController < ApplicationController
     @record = Record.find(params[:id])
   end
 
+  def index
+    @records = Record.all
+  end
+
 end
