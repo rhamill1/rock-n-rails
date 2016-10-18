@@ -1,9 +1,12 @@
-the index page
+the index page<br>
 
 <% for record in @records %>
-  <li>
     <!-- <a href=""><% record.title %></a> -->
     <%= link_to record.title, record %><br>
-    <%= image_tag record.cover_art%>
-  </li>
+    <%= record.artist %> <br>
+    <%= image_tag record.cover_art%><br>
+    <%= button_to "back to the 90's", record, {method: "delete", action: "destroy" }%><br>
+    <%= link_to "make a change", edit_record_path(record) %><br>
+    <%= link_to "Make a New Record", new_record_path %><br>
+    <br><br><br>
 <% end %>
